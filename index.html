@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 и CSS3 сайт</title>
+  <link href="style.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>Oleg Project</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Головна" onclick="slowScroll('#main')">Головна</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Резюме">Резюме</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакти">Контакти</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Відповіді на запитання">FAQ</a>
+    </div>
+  </header>
+  <div id="top">
+    <h1>РЕЗЮМЕ</h1>
+    <h3>Гнатенко Олег Олександрович</h3>
+  </div>
+
+  <div id="style">
+    <div class="intro">
+  <div id="overview">
+    <h2>Нароився 18 березня 2002 в селі Ташли Смілянського району Черкаської області. З 2008 року по 2019 навчався в Ташлицькій ЗОШ. 2019 вступив до ЧДТУ на спеціальність АКІТ.</h2>
+    <h2>Вміння:</h2>
+    <h3>Працював з Pascal, c++, html, css, Js.</h3>
+  </div>
+  </div>
+  <div id="contacts">
+    <center><h5> Зв'язок зі мною</h5></center>
+    <form id="form_input">
+      <label for="name">Ім'я <span>*</span></label><br>
+      <input type="text" placeholder="Ім'я" name="name" id="name"><br>
+      <label for="email"> Пошта <span>*</span></label><br>
+			<input type="email" placeholder="email" name="email" id="email"><br>
+			<label for="message">Запитання <span>*</span></label><br>
+			<textarea placeholder="Запитання" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Відправити</div>
+    </form>
+  </div>
+  <div id="faq">
+    <div>
+       <span class="title">Оплата</span>
+      <p>------------------------------------------------------------------</p>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script>
+        function slowScroll(id) {
+          $('html, body').animate({
+            scrollTop: $(id).offset().top
+          }, 500);
+        }
+    
+        $(document).on("scroll", function () {
+          if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+          else
+            $("header").attr("class", "fixed");
+        });
+      </script>
+
+
+
+
+
+</body>
+</html>
+    
